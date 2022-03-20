@@ -24,7 +24,7 @@ class FillButtonWidget extends StatelessWidget {
   final String text;
   final Color? color;
   final Color? textColor;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final IconData? icon;
 
   @override

@@ -5,9 +5,11 @@ class NavLinkWidget extends StatelessWidget {
   const NavLinkWidget({
     Key? key,
     required this.title,
+    this.onPressed,
   }) : super(key: key);
 
   final String title;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,9 @@ class NavLinkWidget extends StatelessWidget {
       child: TextButton(
         child: Text(
           title,
-          style: kHeadline4,
+          style: kHeadline5,
         ),
-        onPressed: () {},
+        onPressed: onPressed,
       ),
     );
   }

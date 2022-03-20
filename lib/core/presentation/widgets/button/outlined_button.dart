@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/core/global_style/global_style.dart';
-import 'package:flutter_portfolio/core/presentation/widgets/button/base_button.dart';
 
 class OutlinedButtonWidget extends StatelessWidget {
   const OutlinedButtonWidget({
@@ -24,31 +23,34 @@ class OutlinedButtonWidget extends StatelessWidget {
   final String text;
   final Color? color;
   final Color? textColor;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
+    final _textWidget = Text(
+      text,
+      style: kTextButton,
+    );
     return icon != null
-        ? BaseButtonWidget.icon(
-            style: ElevatedButton.styleFrom(
+        ? OutlinedButton.icon(
+            icon: Icon(
+              icon,
+              color: kColorWhite,
+            ),
+            style: OutlinedButton.styleFrom(
               padding: kPaddingButton,
               side: BorderSide(color: color!),
-              onPrimary: textColor,
-              primary: kColorBackground,
             ),
-            icon: icon,
-            text: text,
+            label: _textWidget,
             onPressed: onPressed,
           )
-        : BaseButtonWidget.filled(
-            style: ElevatedButton.styleFrom(
+        : OutlinedButton(
+            style: OutlinedButton.styleFrom(
               padding: kPaddingButton,
               side: BorderSide(color: color!),
-              onPrimary: textColor,
-              primary: kColorBackground,
             ),
-            text: text,
+            child: _textWidget,
             onPressed: onPressed,
           );
   }

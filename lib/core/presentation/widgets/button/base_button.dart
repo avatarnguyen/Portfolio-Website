@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/core/global_style/global_style.dart';
 
-enum ButtonType { normal, icon }
+enum ButtonType {
+  normal,
+  icon,
+}
 
 class BaseButtonWidget extends StatelessWidget {
   const BaseButtonWidget({
@@ -32,7 +35,7 @@ class BaseButtonWidget extends StatelessWidget {
         super(key: key);
 
   final ButtonType type;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final ButtonStyle? style;
   final String text;
   final IconData? icon;
