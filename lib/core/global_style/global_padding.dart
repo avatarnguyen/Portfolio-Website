@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_value.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 
 /// 120.0
 const kPaddingMassive = 120.0;
@@ -28,7 +30,6 @@ const kPaddingXXSmall = 8.0;
 const kPaddingTiny = 4.0;
 
 const kPaddingPage = EdgeInsets.symmetric(
-  vertical: kPaddingMedium,
   horizontal: kPaddingMassive,
 );
 
@@ -36,3 +37,14 @@ const kPaddingButton = EdgeInsets.symmetric(
   vertical: kPaddingXSmall,
   horizontal: kPaddingSmall,
 );
+
+EdgeInsetsGeometry? kPaddingSection(context) =>
+    ResponsiveValue<EdgeInsetsGeometry?>(
+      context,
+      defaultValue: kPaddingPage,
+      valueWhen: [
+        const Condition.smallerThan(
+            name: TABLET,
+            value: EdgeInsets.symmetric(horizontal: kPaddingLarge)),
+      ],
+    ).value;

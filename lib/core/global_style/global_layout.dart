@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 const Widget kHorizontalSpaceTiny = SizedBox(width: 4);
 const Widget kHorizontalSpaceSmall = SizedBox(width: 8);
@@ -33,3 +34,26 @@ double screenHeightPercentage(BuildContext context, {double percentage = 1}) =>
 /// be between 0 and 1 where 0 is 0% and 100 is 100% of the screens width
 double screenWidthPercentage(BuildContext context, {double percentage = 1}) =>
     screenWidth(context) * percentage;
+
+double? screenResponsiveWidth(
+  BuildContext context, {
+  double? defaultValue,
+  double? belowTablet,
+  double? belowDesktop,
+}) =>
+    ResponsiveValue<double?>(
+      context,
+      defaultValue: defaultValue,
+      valueWhen: [
+        if (belowTablet != null)
+          Condition.smallerThan(
+            name: TABLET,
+            value: belowTablet,
+          ),
+        if (belowDesktop != null)
+          Condition.smallerThan(
+            name: DESKTOP,
+            value: belowDesktop,
+          ),
+      ],
+    ).value;

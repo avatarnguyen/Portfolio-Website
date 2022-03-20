@@ -8,3 +8,4 @@ const kColorSecondary = Color(0xFF282162);
 const kColorDark = Color(0xFF000036);
 const kColorDarker = Color(0xFF181824);
 const kColorBackground = Color(0xFF1A1A29);
+const kColorOverlay = Color(0xFF31313F);

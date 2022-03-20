@@ -30,8 +30,16 @@ const kHeadline3 = TextStyle(
   color: kColorLight,
 );
 
-/// SemiBold - 18
+/// SemiBold - 24
 const kHeadline4 = TextStyle(
+  fontFamily: kFontFamily,
+  fontWeight: kFontWeightSemiBold,
+  fontSize: 24,
+  color: kColorLight,
+);
+
+/// SemiBold - 18
+const kHeadline5 = TextStyle(
   fontFamily: kFontFamily,
   fontWeight: kFontWeightSemiBold,
   fontSize: 18,
