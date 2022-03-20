@@ -55,7 +55,11 @@ class ProjectWidget extends StatelessWidget {
               ProjectItemWidget(
                 title: kContentProjectPortfolio,
                 description: kContentProjectPortfolioDescription,
-                onGitHubPressed: () {},
+                onGitHubPressed: () {
+                  const _website =
+                      "https://github.com/avatarnguyen/Portfolio-Website";
+                  _launchURL(_website);
+                },
               ),
               ProjectItemWidget(
                 title: kContentProjectGlance,
