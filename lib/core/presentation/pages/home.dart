@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     _scrollController.animateTo(
       position,
       duration: const Duration(milliseconds: 500),
-      curve: Curves.easeIn,
+      curve: Curves.easeInOut,
     );
   }
 
