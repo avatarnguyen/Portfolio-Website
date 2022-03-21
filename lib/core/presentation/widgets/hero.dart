@@ -61,8 +61,12 @@ class HeroWidget extends StatelessWidget {
                         children: [
                           FillButtonWidget.primary(
                             icon: Icons.person,
-                            text: "About me",
-                            onPressed: onAboutMePress,
+                            text: "LinkedIn",
+                            onPressed: () {
+                              const _linkedIn =
+                                  "https://www.linkedin.com/in/anh-nguyen-b17b9416a/";
+                              _launchURL(_linkedIn);
+                            },
                           ),
                           kHorizontalSpaceMedium,
                           OutlinedButtonWidget.primary(

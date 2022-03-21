@@ -64,9 +64,11 @@ class ProjectWidget extends StatelessWidget {
               ProjectItemWidget(
                 title: kContentProjectGlance,
                 description: kContentProjectGlanceDescription,
-                // onGitHubPressed: () {
-                //   const _glanceLink = "";
-                // },
+                onGitHubPressed: () {
+                  const _glanceLink =
+                      "https://github.com/avatarnguyen/glance/tree/dev_02";
+                  _launchURL(_glanceLink);
+                },
               ),
               ProjectItemWidget(
                 title: kContentProjectThesis,
